@@ -140,6 +140,7 @@ class GeneticAlgorithm:
         '''Скрещевание двух особей. Скрещивание происходит многоточечным методом
         с тремя точками. На вход принимаются две особи родителя, и возвращаются
         две особи потомка.'''
+
         points = []
 
         while len(points) != 3:
@@ -194,7 +195,7 @@ class GeneticAlgorithm:
         return children
     
     def __mutate_individual(self, individual):
-        '''Мутация одной особи. Мутация заключется в дбавлении одной случайной
+        '''Мутация одной особи. Мутация заключется в добавлении одной случайной
         вещи, значит нужно просто выбрать слуйную ячейку в масиве особи, где
         стоит записан ноль и записать туда единицу.'''
 
@@ -228,7 +229,7 @@ class GeneticAlgorithm:
         # Выбор случайной начальной популяции
         population = self.__random_population()
 
-        for _ in range(self.__population_size):
+        for _ in range(self.__generations):
             # Отбор особей для скрещевания
             indecies_for_crossingover = self.__select_individuals_indices(
                 population
